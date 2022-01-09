@@ -1,27 +1,11 @@
-https:\/\/api\.shayujizhang\.com\/ script-response-body iCloud/Quantumult X/Scripts/鲨鱼.js
+var body = $response.body; // 声明一个变量body并以响应消息体赋值
+var obj = JSON.parse(body); // JSON.parse()将json形式的body转变成对象处理
 
-MITM = api.shayujizhang.com
-let obj = JSON.parse($response.body);
-obj={
-  "msg" : "",
-  "data" : {
-    "is_noad" : 0,
-    "is_wx" : 1,
-    "nickname" : "wHAT",
-    "email_isactive" : 0,
-    "record_exists" : 1,
-    "info_id" : 4,
-    "bind_apple" : 1,
-    "ident_status" : 0,
-    "is_buy" : 0,
-    "switch_list" : [
 
-    ],
-    "vip" : { "status":1,"days":99999
-  },
-  "code" : 0
-}
-$done({body: JSON.stringify(obj)});
+obj.vip=9999;
+obj.is_buy=12;
+obj.signin_coun=0;
+obj.ident_status=
 
 
 
@@ -29,4 +13,5 @@ $done({body: JSON.stringify(obj)});
 
 
 
-
+body = JSON.stringify(obj); // 重新打包回json字符串
+$done(body); // 结束修改
